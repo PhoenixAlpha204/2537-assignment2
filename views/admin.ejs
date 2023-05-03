@@ -1,0 +1,11 @@
+<%- include("templates/header") %>
+    <h1 class="display-5 fw-bold text-center">Users</h1>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <ul class="list-group d-inline-block">
+            <% let i = 0; %>
+            <% for(i = 0; i < users.length; i++) { %>
+                <%- include('templates/user', {user: users[i]})  %>
+            <% } %>
+        </ul>
+    </div>
+<%- include("templates/footer") %>

@@ -1,0 +1,7 @@
+<li href="#" class="list-group-item">
+    <div class="d-flex w-100 justify-content-between">
+        <h5 class="h5 mb-4 fw-normal"> <%= user.name %> </h5>
+    </div>
+    <button type="button" class="btn btn-primary" onclick="window.location.href='/promote?id=<%= user._id %>'">Promote to Admin</button>
+    <button type="button" class="btn btn-primary" onclick="window.location.href='/demote?id=<%= user._id %>'">Demote to User</button>
+</li>

@@ -1,0 +1,11 @@
+<%- include("templates/header") %>
+    <h1 class="display-5 fw-bold text-center">Hello, <%= name %></h1>
+    <div class="row mb-3 text-center">
+        <div class="col-md-4 themed-grid-col"><img src="/images/cat1.jpg" style="width: 250px;"></div>
+        <div class="col-md-4 themed-grid-col"><img src="/images/cat2.jpg" style="width: 250px;"></div>
+        <div class="col-md-4 themed-grid-col"><img src="/images/cat3.jpg" style="width: 250px;"></div>
+    </div>
+    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <button type="button" class="btn btn-primary text-center" onclick="window.location.href='/logout'">Logout</button>
+    </div>
+<%- include("templates/footer") %>
