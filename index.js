@@ -24,6 +24,13 @@ var mongoStore = MongoStore.create({
 });
 const Joi = require("joi");
 const ObjectId = require('mongodb').ObjectId;
+const navLinks = [
+    {name: "Home", link: "/"},
+    {name: "Sign Up", link: "/signup"},
+    {name: "Log In", link: "/login"},
+    {name: "Members", link: "/members"},
+];
+const url = require("url");
 
 app.use("/images", express.static("./public"));
 
@@ -37,6 +44,12 @@ app.use(session({
     resave: false,
     saveUninitialized: false
 }));
+
+app.use("/", (req, res, next) => {
+    app.locals.navLinks = navLinks;
+    app.locals.currentUrl = url.parse(req.url).pathname;
+    next();
+});
 
 function sessionValidation(req,res,next) {
     if (req.session.authenticated) {

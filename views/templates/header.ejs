@@ -23,10 +23,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="/">Home</a>
-                    <a class="nav-link" href="/signup">Sign Up</a>
-                    <a class="nav-link" href="/login">Log In</a>
-                    <a class="nav-link" href="/members">Members</a>
+                    <% for(var i = 0; i < locals.navLinks.length; i++) { %>
+                        <a class="nav-link <% if (locals.currentUrl == navLinks[i].link) { %>active<% } %>"
+                            aria-current="page" href="<%= locals.navLinks[i].link %>"><%= locals.navLinks[i].name %></a>
+                    <% } %>
                 </div>
             </div>
         </div>
